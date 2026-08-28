@@ -1,1 +1,45 @@
+<!-- Comandos -->
+<!-- ng serve  -->
+<!-- ng g c name -->
+
 <p>home works!</p>
+
+<!-- Exemplo 3 -->
+<input [(ngModel)] = "nome" placeholder="Digite seu nome">
+<p>Você digitou: {{nome}}</p>
+
+<!-- Exemplo 1 -->
+<p>Olá, {{ nome }}!</p>
+
+<!-- Exemplo 2 -->
+<p>Contador: {{ contador}}</p>
+<button (click)="incrementar()">+</button>
+<button (click)="decrementar()">-</button>
+
+<!-- Exemplo 4 -->
+<button (click)="mostrar = !mostrar">Toggle</button>
+@if (mostrar){
+    <p>Texto visível</p>
+}
+@else {
+    <p>Agora está escondido...</p>
+} 
+
+<!-- @if -> moderno não requer import -->
+
+<!-- Exmeplo 5 -->
+<ul>
+    @for (item of frutas; track $index){
+        <!-- Exemplo 6 -->
+        <li (click)="selecionada = item">{{item}}</li>
+    }
+</ul>
+
+@if (selecionada) {
+    <p>Você escolheu: {{ selecionada }}</p>
+}
+
+<!-- Exemplo 7 -->
+<p [style]="{'color':cor}">Texto colorido!</p>
+<p [style.cor]="cor">Texto colorido!</p>
+<input [(ngModel)] = "cor" placeholder="Digite uma cor (exemplo: red)">
